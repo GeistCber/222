@@ -601,26 +601,25 @@
             "adminPassword": "1234"
         };
 
-        // 初始化：加载数据（优先 localStorage，其次 data.json，最后默认数据）
+        // 初始化：总是从 data.json 加载最新数据（带时间戳防止缓存）
         async function initApp() {
-            // 优先从 localStorage 加载
-            const savedData = localStorage.getItem('sweetGameData');
-            if (savedData) {
-                try {
-                    appData = JSON.parse(savedData);
-                } catch (e) {
+            try {
+                const response = await fetch('data.json?t=' + Date.now());
+                if (response.ok) {
+                    appData = await response.json();
+                } else {
                     appData = JSON.parse(JSON.stringify(defaultData));
                 }
-            } else {
-                // 其次从 data.json 加载
-                try {
-                    const response = await fetch('data.json');
-                    if (response.ok) {
-                        appData = await response.json();
-                    } else {
+            } catch (e) {
+                // 如果网络失败，检查本地是否有编辑缓存
+                const savedData = localStorage.getItem('sweetGameData');
+                if (savedData) {
+                    try {
+                        appData = JSON.parse(savedData);
+                    } catch (e2) {
                         appData = JSON.parse(JSON.stringify(defaultData));
                     }
-                } catch (e) {
+                } else {
                     appData = JSON.parse(JSON.stringify(defaultData));
                 }
             }
