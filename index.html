@@ -94,19 +94,6 @@
                 </button>
             </div>
 
-            <!-- 游戏配置 -->
-            <div class="mb-6 border-t-2 border-dashed border-cutePink/30 pt-6">
-                <h3 class="text-lg font-bold text-cuteDeepPink mb-3">🎮 游戏配置</h3>
-                <p class="text-xs text-gray-500 mb-4">管理所有游戏项目，支持添加、删除和调整显示顺序</p>
-                <div id="editGamesList" class="space-y-2 mb-4"></div>
-                <div class="flex items-center gap-2">
-                    <input type="text" id="newGameName" placeholder="输入游戏名称" class="border-2 border-cutePink rounded px-3 py-2 text-xs w-36">
-                    <button onclick="addGameFromInput()" class="bg-cutePurple text-white font-bold px-4 py-2 text-xs rounded-full hover:bg-purple-600 transition-colors">
-                        <i class="fa fa-plus mr-1"></i> 添加游戏
-                    </button>
-                </div>
-            </div>
-
             <!-- 联系方式编辑 -->
             <div class="mb-6 pt-4 border-t-2 border-dashed border-cutePink/50">
                 <h3 class="text-lg font-bold text-cuteDeepPink mb-3">📱 联系方式</h3>
@@ -231,7 +218,162 @@
                 </div>
             </div>
 
-            <div id="playerStatsGamesContainer" class="space-y-16 max-w-4xl mx-auto pb-24"></div>
+            <div class="space-y-16 max-w-4xl mx-auto pb-24">
+                <div class="bg-white border-[4px] border-cutePink rounded-3xl cute-shadow-pink overflow-hidden">
+                    <div class="bg-cutePink text-white px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-bold tracking-wider">🌸 无畏契约 VALORANT</h3>
+                        <span class="bg-white text-cuteDeepPink text-xs font-bold px-2.5 py-0.5 rounded-full">MOS_01</span>
+                    </div>
+                    <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 bg-cuteLightPink/20">
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteLightPink text-cuteDeepPink text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                ✨ 历史最高段位记录
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="wq-highest-img" src="" class="w-full h-full object-cover" alt="最高战绩">
+                            </div>
+                            <div id="wq-highest-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteDeepPink text-white text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                👑 本赛季当前段位
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="wq-current-img" src="" class="w-full h-full object-cover" alt="当前战绩">
+                            </div>
+                            <div id="wq-current-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border-[4px] border-cutePink rounded-3xl cute-shadow-pink overflow-hidden">
+                    <div class="bg-cutePink text-white px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-bold tracking-wider">🌸 王者荣耀 HONOUR OF KINGS</h3>
+                        <span class="bg-white text-cuteDeepPink text-xs font-bold px-2.5 py-0.5 rounded-full">MOS_02</span>
+                    </div>
+                    <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 bg-cuteLightPink/20">
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteLightPink text-cuteDeepPink text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                ✨ 历史最高段位记录
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="wzry-highest-img" src="" class="w-full h-full object-cover" alt="最高战绩">
+                            </div>
+                            <div id="wzry-highest-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteDeepPink text-white text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                👑 本赛季当前段位
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="wzry-current-img" src="" class="w-full h-full object-cover" alt="当前战绩">
+                            </div>
+                            <div id="wzry-current-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border-[4px] border-cutePink rounded-3xl cute-shadow-pink overflow-hidden">
+                    <div class="bg-cutePurple text-white px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-bold tracking-wider">🌸 英雄联盟 LEAGUE OF LEGENDS</h3>
+                        <span class="bg-white text-cutePurple text-xs font-bold px-2.5 py-0.5 rounded-full">MOS_03</span>
+                    </div>
+                    <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 bg-cuteLightPink/20">
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteLightPink text-pink-600 text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                ✨ 历史最高段位记录
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="lol-highest-img" src="" class="w-full h-full object-cover" alt="最高战绩">
+                            </div>
+                            <div id="lol-highest-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteDeepPink text-white text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                👑 本赛季当前段位
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="lol-current-img" src="" class="w-full h-full object-cover" alt="当前战绩">
+                            </div>
+                            <div id="lol-current-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border-[4px] border-cutePink rounded-3xl cute-shadow-pink overflow-hidden">
+                    <div class="bg-cutePink text-white px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-bold tracking-wider">🌸 金铲铲之战 TEAMFIGHT TACTICS</h3>
+                        <span class="bg-white text-cuteDeepPink text-xs font-bold px-2.5 py-0.5 rounded-full">MOS_04</span>
+                    </div>
+                    <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 bg-cuteLightPink/20">
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteLightPink text-cuteDeepPink text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                ✨ 历史最高段位记录
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="jcc-highest-img" src="" class="w-full h-full object-cover" alt="最高战绩">
+                            </div>
+                            <div id="jcc-highest-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteDeepPink text-white text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                👑 本赛季当前段位
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="jcc-current-img" src="" class="w-full h-full object-cover" alt="当前战绩">
+                            </div>
+                            <div id="jcc-current-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border-[4px] border-cutePink rounded-3xl cute-shadow-pink overflow-hidden">
+                    <div class="bg-cutePurple text-white px-6 py-4 flex justify-between items-center">
+                        <h3 class="text-lg font-bold tracking-wider">🌸 瓦罗兰特 VALORANT</h3>
+                        <span class="bg-white text-cutePurple text-xs font-bold px-2.5 py-0.5 rounded-full">MOS_05</span>
+                    </div>
+                    <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 bg-cuteLightPink/20">
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteLightPink text-pink-600 text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                ✨ 历史最高段位记录
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="wlr-highest-img" src="" class="w-full h-full object-cover" alt="最高战绩">
+                            </div>
+                            <div id="wlr-highest-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                        <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
+                            <div class="bg-cuteDeepPink text-white text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
+                                👑 本赛季当前段位
+                            </div>
+                            <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
+                                <img id="wlr-current-img" src="" class="w-full h-full object-cover" alt="当前战绩">
+                            </div>
+                            <div id="wlr-current-text" class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
+                                -
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="text-center pb-12">
                 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-white border-2 border-cutePink text-cuteDeepPink font-bold px-8 py-3 rounded-full text-xs uppercase tracking-widest hover:bg-cuteLightPink transition-colors">
@@ -456,7 +598,6 @@
                 "qq": { "img": "picture/qq.jpg", "number": "1094209750" },
                 "wechat": { "img": "picture/微信.jpg", "id": "buxiangguanshibiefan" }
             },
-            "games": ["无畏契约", "王者荣耀", "英雄联盟", "金铲铲之战", "瓦罗兰特"],
             "adminPassword": "1234"
         };
 
@@ -564,7 +705,6 @@
                     editModeEnabled = true;
                     document.getElementById('editPanel').classList.remove('hidden');
                     renderEditPlayersList();
-                    renderEditGamesList();
                 }
             } else {
                 document.getElementById('passwordError').classList.remove('hidden');
@@ -597,14 +737,9 @@
                             </button>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                            ${(player.gamesOrder || Object.keys(player.games)).map((game, gameIndex) => `
-                                <div class="bg-white p-3 rounded border border-cutePink/30 relative">
-                                    <div class="absolute top-1 right-1 flex gap-1">
-                                        <button onclick="movePlayerGame(${index}, ${gameIndex}, -1)" class="text-xs text-gray-400 hover:text-cuteDeepPink w-4 h-4 flex items-center justify-center">↑</button>
-                                        <button onclick="movePlayerGame(${index}, ${gameIndex}, 1)" class="text-xs text-gray-400 hover:text-cuteDeepPink w-4 h-4 flex items-center justify-center">↓</button>
-                                        <button onclick="removeGameFromPlayer(${index}, '${game}')" class="text-xs text-red-400 hover:text-red-600 w-4 h-4 flex items-center justify-center">×</button>
-                                    </div>
-                                    <div class="flex items-center justify-between mb-2 pr-12">
+                            ${Object.keys(player.games).map(game => `
+                                <div class="bg-white p-3 rounded border border-cutePink/30">
+                                    <div class="flex items-center justify-between mb-2">
                                         <span class="font-bold text-cuteDeepPink">${game}</span>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2">
@@ -629,50 +764,10 @@
                                     </div>
                                 </div>
                             `).join('')}
-                            <!-- 添加游戏下拉框 -->
-                            <div class="bg-cuteLightPink/30 border-2 border-dashed border-cutePink/50 p-3 rounded border flex flex-col items-center justify-center relative">
-                                <span class="text-cuteDeepPink font-bold text-xs mb-1">+</span>
-                                <select id="addGameSelect${index}" onchange="handleAddGameSelect(this, ${index})" class="text-xs w-full bg-white border border-cutePink rounded px-1 py-1">
-                                    <option value="">选择游戏...</option>
-                                </select>
-                            </div>
                         </div>
                     </div>
                 `;
             });
-            // 填充添加游戏下拉框选项
-            setTimeout(() => {
-                appData.players.forEach((player, idx) => {
-                    const select = document.getElementById('addGameSelect' + idx);
-                    if (select) {
-                        select.innerHTML = '<option value="">选择游戏...</option>';
-                        const existingGames = Object.keys(player.games);
-                        const availableGames = (appData.games || []).filter(g => !existingGames.includes(g));
-                        availableGames.forEach(g => {
-                            select.innerHTML += `<option value="${g}">${g}</option>`;
-                        });
-                    }
-                });
-            }, 100);
-        }
-
-        function handleAddGameSelect(select, playerIndex) {
-            const gameName = select.value;
-            if (gameName && appData.players[playerIndex]) {
-                const player = appData.players[playerIndex];
-                player.games[gameName] = {
-                    "highest": { "img": "picture/头像1.jpg", "text": "历史最高：暂无" },
-                    "current": { "img": "picture/头像1.jpg", "text": "本赛季当前：暂无" }
-                };
-                if (!player.gamesOrder) {
-                    player.gamesOrder = Object.keys(player.games).filter(g => g !== gameName);
-                }
-                player.gamesOrder.push(gameName);
-                autoSync();
-                renderEditPlayersList();
-                showToast();
-                select.value = '';
-            }
         }
 
         function triggerAvatarUpload(index) {
@@ -706,33 +801,6 @@
                 renderEditPlayersList();
             };
             reader.readAsDataURL(file);
-        }
-
-        function removeGameFromPlayer(playerIndex, gameName) {
-            if (confirm(`确定要从该选手移除「${gameName}」吗？`)) {
-                delete appData.players[playerIndex].games[gameName];
-                // 从游戏顺序中移除
-                if (appData.players[playerIndex].gamesOrder) {
-                    appData.players[playerIndex].gamesOrder = appData.players[playerIndex].gamesOrder.filter(g => g !== gameName);
-                }
-                autoSync();
-                renderEditPlayersList();
-            }
-        }
-
-        function movePlayerGame(playerIndex, gameIndex, direction) {
-            const player = appData.players[playerIndex];
-            if (!player.gamesOrder) {
-                player.gamesOrder = Object.keys(player.games);
-            }
-            const newIndex = gameIndex + direction;
-            if (newIndex >= 0 && newIndex < player.gamesOrder.length) {
-                const temp = player.gamesOrder[gameIndex];
-                player.gamesOrder[gameIndex] = player.gamesOrder[newIndex];
-                player.gamesOrder[newIndex] = temp;
-                autoSync();
-                renderEditPlayersList();
-            }
         }
 
         function updatePlayerData(index, field, value) {
@@ -773,13 +841,17 @@
         }
 
         function addNewPlayer() {
-            // 新选手初始没有游戏，需要手动点击添加
             const newPlayer = {
                 name: "新选手",
                 tag: "特色标签",
                 avatar: "picture/头像1.jpg",
-                games: {},
-                gamesOrder: []
+                games: {
+                    "无畏契约": { "highest": { "img": "picture/无畏契约1.jpg", "text": "历史最高：白银" }, "current": { "img": "picture/无畏契约2.jpg", "text": "本赛季当前：白银" } },
+                    "王者荣耀": { "highest": { "img": "picture/王者荣耀1.jpg", "text": "历史最高：最强王者" }, "current": { "img": "picture/王者荣耀2.jpg", "text": "本赛季当前：尊贵铂金" } },
+                    "英雄联盟": { "highest": { "img": "picture/英雄联盟1.jpg", "text": "历史最高：华贵铂金" }, "current": { "img": "picture/英雄联盟2.jpg", "text": "本赛季当前：黑铁" } },
+                    "金铲铲之战": { "highest": { "img": "picture/金铲铲之战1.jpg", "text": "历史最高：华贵铂金" }, "current": { "img": "picture/金铲铲之战2.jpg", "text": "本赛季当前：坚毅黑铁" } },
+                    "瓦罗兰特": { "highest": { "img": "picture/瓦罗兰特1.jpg", "text": "历史最高：铂金" }, "current": { "img": "picture/瓦罗兰特2.jpg", "text": "本赛季当前：铂金" } }
+                }
             };
             appData.players.push(newPlayer);
             autoSync();
@@ -790,109 +862,6 @@
 
         function loadDataFromFile() {
             document.getElementById('jsonFileInput').click();
-        }
-
-        // ============ 游戏配置功能 ============
-
-        function renderEditGamesList() {
-            const container = document.getElementById('editGamesList');
-            container.innerHTML = '';
-
-            appData.games.forEach((game, index) => {
-                container.innerHTML += `
-                    <div class="flex items-center justify-between bg-white p-3 rounded-xl border-2 border-cutePink/30">
-                        <div class="flex items-center gap-3">
-                            <span class="text-xs text-gray-400 w-6">#${index + 1}</span>
-                            <input type="text" value="${game}" onchange="updateGameName(${index}, this.value)"
-                                   class="font-bold border-1 border-cutePink rounded px-2 py-1 w-40">
-                        </div>
-                        <div class="flex gap-2">
-                            <button onclick="moveGame(${index}, -1)" ${index === 0 ? 'disabled' : ''}
-                                    class="text-xs bg-gray-100 text-gray-600 font-bold px-2 py-1 rounded hover:bg-gray-200 disabled:opacity-30" title="上移">
-                                ↑
-                            </button>
-                            <button onclick="moveGame(${index}, 1)" ${index === appData.games.length - 1 ? 'disabled' : ''}
-                                    class="text-xs bg-gray-100 text-gray-600 font-bold px-2 py-1 rounded hover:bg-gray-200 disabled:opacity-30" title="下移">
-                                ↓
-                            </button>
-                            <button onclick="deleteGame(${index})" class="text-xs bg-red-50 text-red-500 font-bold px-3 py-1 rounded-full hover:bg-red-500 hover:text-white transition-colors">
-                                删除
-                            </button>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function addGameFromInput() {
-            const input = document.getElementById('newGameName');
-            const name = input.value.trim();
-            if (name) {
-                if (!appData.games.includes(name)) {
-                    appData.games.push(name);
-                    // 不再自动添加到所有选手的游戏中，只有点击加号才会添加
-                    autoSync();
-                    renderEditGamesList();
-                    input.value = '';
-                    showToast();
-                } else {
-                    alert('该游戏已存在！');
-                }
-            }
-        }
-
-        function addNewGame() {
-            // 使用输入框添加游戏
-            addGameFromInput();
-        }
-
-        function updateGameName(index, newName) {
-            const oldName = appData.games[index];
-            if (newName && newName.trim() && newName !== oldName) {
-                appData.games[index] = newName.trim();
-                // 更新所有选手的games中的key
-                appData.players.forEach(player => {
-                    if (player.games[oldName]) {
-                        player.games[newName.trim()] = player.games[oldName];
-                        delete player.games[oldName];
-                    }
-                });
-                autoSync();
-                renderEditGamesList();
-                renderEditPlayersList();
-            }
-        }
-
-        function deleteGame(index) {
-            const gameName = appData.games[index];
-            if (confirm(`确定要删除游戏「${gameName}」吗？所有选手的该游戏数据都会被删除。`)) {
-                appData.games.splice(index, 1);
-                // 从所有选手中删除该游戏和顺序记录
-                appData.players.forEach(player => {
-                    if (player.games[gameName]) {
-                        delete player.games[gameName];
-                    }
-                    if (player.gamesOrder) {
-                        player.gamesOrder = player.gamesOrder.filter(g => g !== gameName);
-                    }
-                });
-                autoSync();
-                renderEditGamesList();
-                renderEditPlayersList();
-                showToast();
-            }
-        }
-
-        function moveGame(index, direction) {
-            const newIndex = index + direction;
-            if (newIndex >= 0 && newIndex < appData.games.length) {
-                const temp = appData.games[index];
-                appData.games[index] = appData.games[newIndex];
-                appData.games[newIndex] = temp;
-                autoSync();
-                renderEditGamesList();
-                showToast();
-            }
         }
 
         function handleJsonFileLoad(event) {
@@ -907,7 +876,6 @@
                     autoSync();
                     applyDataToUI();
                     renderEditPlayersList();
-                    renderEditGamesList();
                     showToast();
                     updateSyncStatus('已从 data.json 导入并保存', true);
                 } catch (err) {
@@ -948,31 +916,12 @@
             if (pageId === 'playerListPage') renderPlayerCards();
             if (pageId === 'adminPanel') {
                 updateAdminPlayerSelect();
-                updateAdminGameSelect();
                 renderPlayerManageList();
             }
         }
 
         function goBack() {
             showPage(previousPage);
-        }
-
-        function updateAdminPlayerSelect() {
-            const select = document.getElementById('adminPlayerSelect');
-            if (!select) return;
-            select.innerHTML = '';
-            appData.players.forEach(player => {
-                select.innerHTML += `<option value="${player.name}">${player.name}</option>`;
-            });
-        }
-
-        function updateAdminGameSelect() {
-            const select = document.getElementById('adminGameSelect');
-            if (!select) return;
-            select.innerHTML = '';
-            appData.games.forEach(game => {
-                select.innerHTML += `<option value="${game}">${game}</option>`;
-            });
         }
 
         function renderPlayerCards() {
@@ -1004,52 +953,22 @@
             document.getElementById('playerName').textContent = player.name;
             document.getElementById('detailAvatar').src = player.avatar;
 
-            // 动态渲染游戏卡片（使用玩家自己的游戏顺序）
-            const container = document.getElementById('playerStatsGamesContainer');
-            container.innerHTML = '';
+            const gamePrefixMap = {
+                '无畏契约': 'wq',
+                '王者荣耀': 'wzry',
+                '英雄联盟': 'lol',
+                '金铲铲之战': 'jcc',
+                '瓦罗兰特': 'wlr'
+            };
 
-            // 获取该玩家的游戏顺序，如果没有则用全部游戏
-            const playerGames = player.gamesOrder || appData.games;
+            Object.keys(player.games).forEach(game => {
+                const prefix = gamePrefixMap[game];
+                const gameData = player.games[game];
 
-            playerGames.forEach((gameName, index) => {
-                const gameData = player.games[gameName];
-                if (!gameData) return; // 跳过不存在的游戏
-
-                const mosNumber = String(index + 1).padStart(2, '0');
-                const isPurple = ['英雄联盟', '瓦罗兰特'].includes(gameName);
-
-                container.innerHTML += `
-                    <div class="bg-white border-[4px] border-cutePink rounded-3xl cute-shadow-pink overflow-hidden">
-                        <div class="${isPurple ? 'bg-cutePurple' : 'bg-cutePink'} text-white px-6 py-4 flex justify-between items-center">
-                            <h3 class="text-lg font-bold tracking-wider">🌸 ${gameName}</h3>
-                            <span class="bg-white ${isPurple ? 'text-cutePurple' : 'text-cuteDeepPink'} text-xs font-bold px-2.5 py-0.5 rounded-full">MOS_${mosNumber}</span>
-                        </div>
-                        <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 bg-cuteLightPink/20">
-                            <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
-                                <div class="${isPurple ? 'bg-cuteLightPink text-pink-600' : 'bg-cuteLightPink text-cuteDeepPink'} text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
-                                    ✨ 历史最高段位记录
-                                </div>
-                                <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
-                                    <img src="${gameData.highest.img}" class="w-full h-full object-cover" alt="最高战绩">
-                                </div>
-                                <div class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
-                                    ${gameData.highest.text}
-                                </div>
-                            </div>
-                            <div class="bg-white border-2 border-cutePink/60 p-4 rounded-2xl shadow-sm">
-                                <div class="bg-cuteDeepPink text-white text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-3">
-                                    👑 本赛季当前段位
-                                </div>
-                                <div class="border border-cutePink/30 bg-cuteLightPink/10 aspect-[4/3] rounded-xl overflow-hidden">
-                                    <img src="${gameData.current.img}" class="w-full h-full object-cover" alt="当前战绩">
-                                </div>
-                                <div class="mt-4 bg-cuteLightPink/40 border border-cutePink text-sm font-bold rounded-xl p-3 text-center text-pink-700">
-                                    ${gameData.current.text}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                document.getElementById(`${prefix}-highest-img`).src = gameData.highest.img;
+                document.getElementById(`${prefix}-highest-text`).textContent = gameData.highest.text;
+                document.getElementById(`${prefix}-current-img`).src = gameData.current.img;
+                document.getElementById(`${prefix}-current-text`).textContent = gameData.current.text;
             });
 
             showPage('playerStatsPage');
@@ -1121,7 +1040,6 @@
                 appData.players.splice(index, 1);
                 renderPlayerManageList();
                 updateAdminPlayerSelect();
-                updateAdminGameSelect();
                 renderPlayerCards();
                 closeDeleteConfirmModal();
                 showToast();
@@ -1156,20 +1074,17 @@
                 return;
             }
 
-            // 动态根据 games 数组创建默认游戏数据
-            const gamesData = {};
-            appData.games.forEach(game => {
-                gamesData[game] = {
-                    "highest": { "img": "picture/头像1.jpg", "text": "历史最高：暂无" },
-                    "current": { "img": "picture/头像1.jpg", "text": "本赛季当前：暂无" }
-                };
-            });
-
             const newPlayer = {
                 name: name,
                 tag: tag,
                 avatar: uploadedAvatarData || 'picture/头像1.jpg',
-                games: gamesData
+                games: {
+                    "无畏契约": { "highest": { "img": "picture/无畏契约1.jpg", "text": "历史最高：白银" }, "current": { "img": "picture/无畏契约2.jpg", "text": "本赛季当前：白银" } },
+                    "王者荣耀": { "highest": { "img": "picture/王者荣耀1.jpg", "text": "历史最高：最强王者" }, "current": { "img": "picture/王者荣耀2.jpg", "text": "本赛季当前：尊贵铂金" } },
+                    "英雄联盟": { "highest": { "img": "picture/英雄联盟1.jpg", "text": "历史最高：华贵铂金" }, "current": { "img": "picture/英雄联盟2.jpg", "text": "本赛季当前：黑铁" } },
+                    "金铲铲之战": { "highest": { "img": "picture/金铲铲之战1.jpg", "text": "历史最高：华贵铂金" }, "current": { "img": "picture/金铲铲之战2.jpg", "text": "本赛季当前：坚毅黑铁" } },
+                    "瓦罗兰特": { "highest": { "img": "picture/瓦罗兰特1.jpg", "text": "历史最高：铂金" }, "current": { "img": "picture/瓦罗兰特2.jpg", "text": "本赛季当前：铂金" } }
+                }
             };
 
             appData.players.push(newPlayer);
@@ -1178,7 +1093,6 @@
             uploadedAvatarData = '';
             renderPlayerManageList();
             updateAdminPlayerSelect();
-            updateAdminGameSelect();
             renderPlayerCards();
             showToast();
         }
